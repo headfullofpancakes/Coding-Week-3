@@ -44,12 +44,12 @@ result to the console.*/
 let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 
 //2a
-let nameLengths = names.map(function (element) {
+let lengths = names.map(function (element) {
     return element.length;
 });
-console.log(nameLengths); //checking that map is being used correctly
+console.log(lengths); //checking that map is being used correctly
 
-let averageLetters = nameLengths.reduce(function (preceding, currentValue) {
+let averageLetters = lengths.reduce(function (preceding, currentValue) {
     return preceding + currentValue;
 });
 console.log(averageLetters / names.length);
@@ -71,7 +71,7 @@ console.log(newString);
     console.log(names[names.length -1]);
 
 //4. How do you access the first element of any array?
-    //You may use it's position within the array to call it out
+    //You may use it's position within the array to call it out.
     console.log(names[0]);
 
 /*5. Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
@@ -80,4 +80,68 @@ For example:
 namesArray = ["Kelly", "Sam", "Kate"] //given this array
 nameLengths = [5, 3, 4] //create this new array*/
 
+//5
+let nameLengths = names.map(function (element) {
+    return element.length;
+});
+console.log(nameLengths);
+
+
+//6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
+let lengthsSum = nameLengths.reduce(function (preceding, currentValue){
+    return preceding + currentValue;
+});
+console.log(lengthsSum);
+
+//7. Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’).
+str = "";
+
+function myFunction(word, n) {
+    for(i = 0; i < n; i++) {
+        str += word;
+    }
+        console.log(str);
+}
+
+myFunction('Hello', 3);
+
+//8. Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
+function fullName(firstName, lastName) {
+        console.log(firstName + " " + lastName);
+}
+fullName('Big', 'Bopper');
+
+//9. Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
+let arr = [20, 30, 40, 50];
+
+function arrayOfNumbers(array) {
+    let sum = array.reduce(function (accumulator, currentValue){
+        return accumulator + currentValue;
+    });
+    
+    if(sum > 100) {
+        console.log(true);
+    }
+}
+arrayOfNumbers(arr);
+
+//10. Write a function that takes an array of numbers and returns the average of all the elements in the array.
+function arrayAverage(array) {
+    let arrSum = array.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue;
+
+    });
+    console.log(arrSum / array.length);
+  }
+
+  arrayAverage(arr);
+
+//11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+  
+
+//12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+  
+
+
+//13. Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
 
