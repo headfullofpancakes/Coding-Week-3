@@ -9,7 +9,7 @@ c. Use a loop to iterate through the array and calculate the average age. Print 
 let ages = [3, 9, 23, 64, 2, 8, 28, 93];
 
 function subtractAges() {
-    for (i = 0; i < ages.length; i++); {
+    for (i = 0; i < ages.length; i++) {
         console.log(ages[ages.length -1] - ages [0]);
     }
 }
@@ -136,12 +136,63 @@ function arrayAverage(array) {
 
   arrayAverage(arr);
 
-//11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
-  
+//11. Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array 
+//is greater than the average of the elements in the second array.
+let array1 = [9, 15, 17, 22, 39];
+let array2 = [28, 44, 67, 49];
 
-//12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
-  
+function twoArrayAverage(array1, array2) {
+    let arrSum1 = array1.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue;
+    });
+
+    let arrSum2 = array2.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue;
+    });
+
+    if (arrSum1 / array1.length > arrSum2 / array2.length) {
+        console.log(true);
+    }else { 
+        console.log(false);
+    }
+  }
+  twoArrayAverage(array1, array2);
+  twoArrayAverage(array2, array1);
+
+
+
+//12. Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true 
+//if it is hot outside and if moneyInPocket is greater than 10.50.
+function willBuyDrink (isHotOutside, moneyInPocket) {
+    if (isHotOutside === true && moneyInPocket > 10.50) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(willBuyDrink(false, 22));
+console.log(willBuyDrink(true, 59));
 
 
 //13. Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
 
+/*The following function is based on my buddy Andy's basic parameter's for accepting gig's to play as a for-hire musician.
+If the gig meets at least two of the parameter's then the gig is worth taking, but if it meets only one, or none, then
+the gig isn't worth taking.*/
+
+function gigWorth (payWell, goodMaterial, likePeople) {
+    if (payWell > 100 && goodMaterial === true) {
+        return 'Take the gig!';
+    } else if (goodMaterial === true && likePeople === true) {
+        return 'Take the gig!';
+    } else if (payWell > 100 && likePeople === true) {
+        return 'Take the gig';
+    } else {
+        return "Don't take the gig.";
+    }
+}
+
+console.log(gigWorth(100, true, true));
+console.log(gigWorth(100, false, false));
+console.log(gigWorth(88, true, true));
+console.log(gigWorth(50, false, true));
